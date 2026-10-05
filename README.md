@@ -13,7 +13,7 @@ The asset is the pixel-art growth engine that runs all three channels: registrat
 | Deliverable | Where |
 |---|---|
 | **1. Growth Plan** (5 slides) | [`docs/Growth-Plan.pdf`](docs/Growth-Plan.pdf) · live at `/#/plan` |
-| **2. Working asset** | The deployed site (see *Deploy*). Start at `/`, then `/#/hq` |
+| **2. Working asset** | The deployed site (see *Deploy*). Start at `/`, then `/#/hq`. Offline copy: [`docs/AI-Quest-60-offline.html`](docs/AI-Quest-60-offline.html) |
 | **3. AI + Learning Notes** | [`docs/AI-Learning-Notes.md`](docs/AI-Learning-Notes.md) · live at `/#/notes` |
 | **4. 3-minute video** | Script + shot list: [`docs/Video-Script.md`](docs/Video-Script.md). Silent screen-recorded walkthrough to narrate over: [`docs/demo-walkthrough.mp4`](docs/demo-walkthrough.mp4) |
 | The three questions | Answered in the AI Notes (doc + page) |
@@ -33,12 +33,23 @@ The **Sim day** selector in the top bar moves the whole site through the 7-day s
 
 > **Honesty note:** this is a simulation, as the brief asks. Dashboard numbers come from a seeded model of the plan's funnel (`src/data/simulate.ts`). Anything you register is stored in your browser, or in a Google Sheet if the backend below is enabled. It is not an official NxtWave page.
 
-## Run locally
+## Run it on your laptop
+
+**Fastest, no install:** double-click [`docs/AI-Quest-60-offline.html`](docs/AI-Quest-60-offline.html). It's the whole site in one file (fonts included) and works without internet. Registrations you make are saved in that browser.
+
+**Full project (to edit or deploy):**
+
+1. Install **Node.js 22 LTS** from https://nodejs.org (Vite needs Node 20.19+).
+2. Get the code, either way:
+   - unzip `AI-Quest-60.zip`, or
+   - `git clone -b ccr-3c82e047-80xjt2 https://github.com/msraaghavan/Nxt.git`
+3. In that folder, run:
 
 ```bash
 npm install
-npm run dev        # http://localhost:5173
-npm run build      # type-check + production build into dist/
+npm run dev            # opens on http://localhost:5173
+npm run build          # type-check + production build into dist/
+npm run build:offline  # regenerate docs/AI-Quest-60-offline.html
 ```
 
 ## Deploy (pick one)
@@ -77,5 +88,6 @@ src/
   components/          pixel UI kit, charts, chrome
   pages/               Landing, Join, Pass, Wars, Leaders, WhatsApp, HQ, Plan, Notes
 integrations/          Google Apps Script backend
-docs/                  Growth Plan PDF, AI notes, video script, Lovable prompts
+scripts/               offline single-file build
+docs/                  Growth Plan PDF, offline site, AI notes, video script, Lovable prompts
 ```

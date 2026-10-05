@@ -3,10 +3,11 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "AI Quest 60 \u2014 pixel-art growth engine for the 'Build Your First AI Project in 60 Minutes' workshop (NxtWave Growth Challenge)",
+  "description": "AI Quest 60 — pixel-art growth engine for the 'Build Your First AI Project in 60 Minutes' workshop (NxtWave Growth Challenge)",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit -p . && vite build",
+    "build:offline": "node scripts/build-offline.mjs",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit -p ."
   },
@@ -25,5 +26,8 @@
     "@vitejs/plugin-react": "^6.1.1",
     "typescript": "~5.9.3",
     "vite": "^8.3.2"
+  },
+  "engines": {
+    "node": ">=20.19.0"
   }
 }
